@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LeGPS2</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="no_reading">-</string>
+    <string name="speed">Velocidade</string>
+    <string name="kmh">km/h</string>
+</resources>

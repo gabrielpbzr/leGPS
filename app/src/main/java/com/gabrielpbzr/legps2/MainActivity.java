@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             Log.i(TAG, "GPS na escuta");
         } catch(SecurityException se) {
             //O usuario nao nos deixou usar o GPS!
+            Toast.makeText(this, R.string.gps_indisponivel, Toast.LENGTH_SHORT).show();
             return;
         }
     }
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             Log.i(TAG, "GPS Parado");
         }catch(SecurityException se){
             //O usuario nao nos deixou usar o GPS!
+            Toast.makeText(this, R.string.gps_indisponivel, Toast.LENGTH_SHORT).show();
             return;
         }
     }
@@ -122,11 +125,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     @Override
     public void onProviderEnabled(String provider) {
-
+        Log.i(TAG, "Provedor "+provider+" habilitado");
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-
+        Log.i(TAG, "Provedor "+provider+" desabilitado");
     }
 }
